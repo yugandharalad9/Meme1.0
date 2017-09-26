@@ -24,7 +24,7 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
     
     
     
-    let memeTextAttributes: [String: Any] = [NSStrokeColorAttributeName: UIColor.black, NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 36) ?? 36, NSStrokeWidthAttributeName: 5]
+    let memeTextAttributes: [String: Any] = [NSStrokeColorAttributeName: UIColor.black, NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 20) ?? 20, NSStrokeWidthAttributeName: 5]
     
     
     
@@ -232,8 +232,11 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         
-        navigationController?.popViewController(animated: true)
-         self.dismiss(animated: true, completion: nil)
+       imgView.image = nil
+        
+        txtfldTOP.text = "TOP"
+        txtfldBOTTOM.text = "BOTTOM"
+        
     }
     
 

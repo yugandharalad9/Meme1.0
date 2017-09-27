@@ -38,20 +38,15 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
 
         imgView.backgroundColor = UIColor.lightGray
         
-        txtfldTOP.defaultTextAttributes = memeTextAttributes
-        txtfldBOTTOM.defaultTextAttributes = memeTextAttributes
-        txtfldTOP.textAlignment = .center
-        txtfldBOTTOM.textAlignment = .center
-        //txtfldTOP.delegate = self
-        //txtfldBOTTOM.delegate = self
-        //txtfldTOP.tag = 0
-        //txtfldBOTTOM.tag = 1
-        
-        //self.hideKeyboardWhenTappedAround()
+        configureDefaultTextFieldSettings(textField: txtfldTOP)
+        configureDefaultTextFieldSettings(textField: txtfldBOTTOM)
         
     }
     
-   
+    func configureDefaultTextFieldSettings(textField: UITextField)  {
+        textField.defaultTextAttributes = memeTextAttributes
+        textField.textAlignment = .center
+    }
 
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -89,24 +84,26 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
     
     @IBAction func pickImage(_ sender: UIBarButtonItem) {
         
-        print("pickImage")
-        let controller = UIImagePickerController()
-        controller.delegate = self
-        controller.sourceType = .photoLibrary
-        present(controller, animated: true, completion: nil)
-        print("got the pic")
+        savingImage(_source: .photoLibrary)
     }
   
     @IBAction func pickImageFromCamera(_ sender: UIBarButtonItem) {
         
         print("pickImageFromCamera")
         
+        savingImage(_source: .camera)
+    }
+    
+    
+    func savingImage(_source: UIImagePickerControllerSourceType) {
         let controller = UIImagePickerController()
         controller.delegate = self
-        controller.sourceType = .camera
+        controller.sourceType = _source
         present(controller, animated: true, completion: nil)
-       print("Clicked the photo")
+        
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         btnCamera.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -237,9 +234,9 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
         txtfldTOP.text = "TOP"
         txtfldBOTTOM.text = "BOTTOM"
         
-    }
-    
+        
 
     }
+}
 
 

@@ -220,17 +220,12 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
         
     }
     
-    /*func saveMemedImageAfterSharing(text: String,completion: Bool) {
-        if completion {
-            self.saveMeme()
-            self.dismiss(animated: true, completion: nil)
-        }
-    }*/
+   
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         
        imgView.image = nil
-        
+         
         txtfldTOP.text = "TOP"
         txtfldBOTTOM.text = "BOTTOM"
         

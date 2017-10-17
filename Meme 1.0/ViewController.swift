@@ -168,8 +168,18 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
     }
     
     func saveMeme()  {
+        //update the meme
         let meme = Meme(topText: txtfldTOP.text!, bottomText: txtfldBOTTOM.text!, originalImage: imgView.image!, memedImage: generateMemedImage())
         
+        //Add saved memedImages to the meme array in the Application Delegate
+        let object = UIApplication.shared.delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+        
+        
+        
+        //Add the memed images to the memes array on the Application Delegate
+        (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
     
     }
     

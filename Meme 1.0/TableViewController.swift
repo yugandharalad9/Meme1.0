@@ -35,14 +35,15 @@ class TableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New Meme", style: .plain, target: self, action: #selector(creatNewMeme))
+        
     }
     
     //navigating to View Controller to creat new meme
     func creatNewMeme() {
         if let navigationController = navigationController {
-            let memeCreatingViewContoller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController")
-            navigationController.pushViewController(memeCreatingViewContoller!, animated: true)
-            
+            let memeEditorViewContoller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController")
+            navigationController.pushViewController(memeEditorViewContoller!, animated: true)
+            self.tabBarController?.tabBar.isHidden = true
         }
     }
     
@@ -61,7 +62,7 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return (UIApplication.shared.delegate as! AppDelegate).memes.count
+        return memedImages.count
         
     }
 
@@ -70,7 +71,8 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memeTableViewCell")!
 
         // Configure the cell...
-        let memeImages = (UIApplication.shared.delegate as! AppDelegate).memes[(indexPath as NSIndexPath).row]
+        let memeImages = self.memedImages[indexPath.row]
+        
         
         cell.imageView?.image = memeImages.memedImage
         cell.textLabel?.text = memeImages.topText
@@ -81,18 +83,14 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let slectedMemes = (UIApplication.shared.delegate as! AppDelegate).memes
+        print(indexPath.row)
+        
         
         //calling View Controller from StoryBoard
-        
-        let VCForShowingSelectedMemedImage = storyboard?.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+        let detailedImageVC = self.storyboard?.instantiateViewController(withIdentifier: "DetailMemedImageVC") as! DetailMemedImageVC
         
         //send information to VC with data from selected row
-        
-
-        
-        
-        
+        detailedImageVC.detailMeme = memedImages[indexPath.row]
     }
 
     /*

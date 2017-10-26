@@ -48,7 +48,7 @@
         <!--Table View Controller-->
         <scene sceneID="SLL-Zj-bxP">
             <objects>
-                <tableViewController id="etp-8Y-Bs2" customClass="TableViewController" customModule="Meme_1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="etp-8Y-Bs2" customClass="TableViewController" customModule="Meme_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="L3b-3D-mMt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,10 +156,48 @@
             </objects>
             <point key="canvasLocation" x="-1193" y="621"/>
         </scene>
+        <!--Detail Memed ImageVC-->
+        <scene sceneID="3gs-F1-v1G">
+            <objects>
+                <viewController storyboardIdentifier="DetailMemedImageVC" id="1ve-Bh-MuR" customClass="DetailMemedImageVC" customModule="Meme_2_0" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O9N-3M-HCt"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Ww-c0-ZeW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OzI-K2-76K">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MNg-GA-ADl">
+                                <rect key="frame" x="16" y="161.5" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="343" id="XIh-bp-2Q8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MNg-GA-ADl" firstAttribute="trailing" secondItem="OzI-K2-76K" secondAttribute="trailingMargin" id="8aH-5e-5FA"/>
+                            <constraint firstItem="MNg-GA-ADl" firstAttribute="leading" secondItem="OzI-K2-76K" secondAttribute="leadingMargin" id="UgN-GB-9NL"/>
+                            <constraint firstItem="MNg-GA-ADl" firstAttribute="centerY" secondItem="OzI-K2-76K" secondAttribute="centerY" id="dJI-DT-9B5"/>
+                            <constraint firstItem="MNg-GA-ADl" firstAttribute="leading" secondItem="OzI-K2-76K" secondAttribute="leadingMargin" id="tjE-pZ-7bg"/>
+                            <constraint firstItem="MNg-GA-ADl" firstAttribute="trailing" secondItem="OzI-K2-76K" secondAttribute="trailingMargin" id="wlO-UK-0oa"/>
+                            <constraint firstItem="2Ww-c0-ZeW" firstAttribute="top" secondItem="MNg-GA-ADl" secondAttribute="bottom" constant="162.5" id="xDB-zP-Bqh"/>
+                            <constraint firstItem="MNg-GA-ADl" firstAttribute="top" secondItem="O9N-3M-HCt" secondAttribute="bottom" constant="141.5" id="zry-WN-I7o"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ImgViewDetailedMeme" destination="MNg-GA-ADl" id="gJ1-sF-hxP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8wG-qS-Zzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-87.200000000000003" y="-195.6521739130435"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Meme_1_0" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="Meme_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -265,7 +303,7 @@
                     <connections>
                         <outlet property="btnCamera" destination="Mb8-W0-uh4" id="9Mi-bS-Aux"/>
                         <outlet property="cancelButton" destination="94s-1i-Y0R" id="ktO-HI-NQt"/>
-                        <outlet property="imgView" destination="QKZ-V6-h2P" id="CcS-pg-EMl"/>
+                        <outlet property="imgView" destination="QKZ-V6-h2P" id="34U-Ft-U1H"/>
                         <outlet property="navigationBar" destination="OWv-fK-R46" id="CUQ-yb-KLT"/>
                         <outlet property="shareButton" destination="fQN-fP-X50" id="SZl-fw-uaJ"/>
                         <outlet property="toolBar" destination="oGG-Ot-oEX" id="zDF-lU-ufC"/>
@@ -275,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-79.200000000000003" y="138.98050974512745"/>
+            <point key="canvasLocation" x="-87.200000000000003" y="620.23988005997012"/>
         </scene>
     </scenes>
 </document>

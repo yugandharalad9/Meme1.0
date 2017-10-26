@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
+   
     @IBOutlet var imgView: UIImageView!
     @IBOutlet var btnCamera: UIBarButtonItem!
     @IBOutlet var txtfldTOP: UITextField!
@@ -23,7 +24,7 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
     
     
     
-    
+    //defining default text attributes
     let memeTextAttributes: [String: Any] = [NSStrokeColorAttributeName: UIColor.black, NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 20) ?? 20, NSStrokeWidthAttributeName: 5]
     
     
@@ -41,6 +42,12 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
         configureDefaultTextFieldSettings(textField: txtfldTOP)
         configureDefaultTextFieldSettings(textField: txtfldBOTTOM)
         
+        //Disable Share button when Image is not picked
+        shareButton.isEnabled = false
+        
+        //Assigning VC as the delegate for texfields
+        self.txtfldTOP.delegate = self
+        self.txtfldBOTTOM.delegate = self
     }
     
     func configureDefaultTextFieldSettings(textField: UITextField)  {
@@ -71,6 +78,8 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
         
         let imageSelected = info[UIImagePickerControllerOriginalImage] as! UIImage
         imgView.image = imageSelected
+        
+        shareButton.isEnabled = true
         
         dismiss(animated: true, completion: nil)
     }
@@ -110,17 +119,17 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
         
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
+        self.tabBarController!.tabBar.isHidden = true
+        self.navigationController!.navigationBar.isHidden = false
         
     }
 
     func keyboardWillShow(_ notification:Notification) {
-        print("goes into bottm txt")
-        if txtfldBOTTOM.isEditing {
+        print("goes into top txt")
+        if txtfldBOTTOM.isFirstResponder {
             print("bottom is editing")
             view.frame.origin.y -= getKeyboardHeight(notification)
             print("frame shifted")
-            
-            
         }
     }
     
@@ -148,6 +157,12 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
         NotificationCenter.default.removeObserver(self, name: .UIKeyboardWillHide, object: nil)
     }
     
+    //text editing
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
+    }
+    
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         print("Now keyboard is abt to return")
@@ -163,8 +178,11 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
     }
     
     func keyboardWillHide(_ notification:Notification) {
-        view.frame.origin.y = 0
-        print("keyboard will hide")
+        if txtfldBOTTOM.isFirstResponder {
+            view.frame.origin.y = 0
+            print("keyboard will hide")
+        }
+        
     }
     
     func saveMeme()  {
@@ -179,7 +197,7 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
         
         
         //Add the memed images to the memes array on the Application Delegate
-        (UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
+        //(UIApplication.shared.delegate as! AppDelegate).memes.append(meme)
     
     }
     
@@ -238,9 +256,6 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
          
         txtfldTOP.text = "TOP"
         txtfldBOTTOM.text = "BOTTOM"
-        
-        
-
     }
 }
 

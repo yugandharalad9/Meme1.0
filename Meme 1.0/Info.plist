@@ -12,6 +12,8 @@
 	<string>6.0</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Allow access to photo library</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow to save in Album</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Please alow access to camera</string>
 	<key>CFBundleName</key>

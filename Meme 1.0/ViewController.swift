@@ -119,8 +119,8 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
         
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
-        self.tabBarController!.tabBar.isHidden = true
-        self.navigationController!.navigationBar.isHidden = false
+        //self.tabBarController!.tabBar.isHidden = true
+        //self.navigationController!.navigationBar.isHidden = false
         
     }
 
@@ -256,6 +256,8 @@ class ViewController: UIViewController,   UIImagePickerControllerDelegate, UINav
          
         txtfldTOP.text = "TOP"
         txtfldBOTTOM.text = "BOTTOM"
+        
+        dismiss(animated: true, completion: nil)
     }
 }
 

@@ -43,7 +43,7 @@ class TableViewController: UITableViewController {
         if let navigationController = navigationController {
             let memeEditorViewContoller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController")
         navigationController.pushViewController(memeEditorViewContoller!, animated: true)
-            
+            //navigationController.present(memeEditorViewContoller!, animated: true, completion: nil)
             //navigationController.present(memeEditorViewContoller!, animated: true, completion: nil)
             self.tabBarController?.tabBar.isHidden = true
         }

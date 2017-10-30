@@ -121,28 +121,42 @@
             </objects>
             <point key="canvasLocation" x="-2063" y="622"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Collection View Collection View Controller-->
         <scene sceneID="aHg-ga-DjX">
             <objects>
-                <collectionViewController id="b3b-Cu-SaG" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="CollectionViewController" id="b3b-Cu-SaG" customClass="CollectionViewCollectionViewController" customModule="Meme_2_0" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="0lc-rd-Zc3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7rF-0t-u7G">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="150" height="160"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="rdk-BI-ULe">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="memeCollectionViewCell" id="vl5-3O-qND" customClass="CollectionViewCell" customModule="Meme_2_0" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nhs-YV-ojJ">
+                                            <rect key="frame" x="4" y="8" width="142" height="144"/>
+                                        </imageView>
+                                    </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="Nhs-YV-ojJ" secondAttribute="bottom" constant="8" id="1bT-AI-eQ8"/>
+                                    <constraint firstItem="Nhs-YV-ojJ" firstAttribute="leading" secondItem="vl5-3O-qND" secondAttribute="leadingMargin" constant="4" id="Dhm-d8-anr"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Nhs-YV-ojJ" secondAttribute="trailing" constant="4" id="KRk-au-eBz"/>
+                                    <constraint firstItem="Nhs-YV-ojJ" firstAttribute="top" secondItem="vl5-3O-qND" secondAttribute="topMargin" constant="8" id="Ofc-G3-bu5"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageViewCollectionViewCell" destination="Nhs-YV-ojJ" id="0gW-wP-FIs"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -154,7 +168,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lX3-eu-uR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1193" y="621"/>
+            <point key="canvasLocation" x="-1194.4000000000001" y="620.23988005997012"/>
         </scene>
         <!--Detail Memed ImageVC-->
         <scene sceneID="3gs-F1-v1G">

@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		981246851FA4AF6000580833 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981246841FA4AF6000580833 /* CollectionViewCell.swift */; };
 		981ABE0F1F96A1AD0003E740 /* DetailMemedImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981ABE0E1F96A1AD0003E740 /* DetailMemedImageVC.swift */; };
 		982049EC1F952B84008630EA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982049EB1F952B84008630EA /* TableViewController.swift */; };
-		982049EE1F9535FC008630EA /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982049ED1F9535FC008630EA /* CollectionViewController.swift */; };
+		984BE47D1FA269FA0019BC5E /* CollectionViewCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984BE47C1FA269FA0019BC5E /* CollectionViewCollectionViewController.swift */; };
 		98FCE9561F44A0800048EEC4 /* KeyboardTouchHide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FCE9551F44A0800048EEC4 /* KeyboardTouchHide.swift */; };
 		98FCE9581F44D5F40048EEC4 /* MemeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FCE9571F44D5F40048EEC4 /* MemeStruct.swift */; };
 		98FED5EE1F3B9E7100E11823 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98FED5ED1F3B9E7100E11823 /* AppDelegate.swift */; };
@@ -39,9 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		981246841FA4AF6000580833 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		981ABE0E1F96A1AD0003E740 /* DetailMemedImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMemedImageVC.swift; sourceTree = "<group>"; };
 		982049EB1F952B84008630EA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		982049ED1F9535FC008630EA /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		984BE47C1FA269FA0019BC5E /* CollectionViewCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCollectionViewController.swift; sourceTree = "<group>"; };
 		98FCE9551F44A0800048EEC4 /* KeyboardTouchHide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardTouchHide.swift; sourceTree = "<group>"; };
 		98FCE9571F44D5F40048EEC4 /* MemeStruct.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeStruct.swift; sourceTree = "<group>"; };
 		98FED5EA1F3B9E7100E11823 /* Meme 2.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Meme 2.0.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,8 +112,9 @@
 				98FED5ED1F3B9E7100E11823 /* AppDelegate.swift */,
 				98FED5EF1F3B9E7100E11823 /* ViewController.swift */,
 				981ABE0E1F96A1AD0003E740 /* DetailMemedImageVC.swift */,
+				981246841FA4AF6000580833 /* CollectionViewCell.swift */,
 				98FCE9571F44D5F40048EEC4 /* MemeStruct.swift */,
-				982049ED1F9535FC008630EA /* CollectionViewController.swift */,
+				984BE47C1FA269FA0019BC5E /* CollectionViewCollectionViewController.swift */,
 				982049EB1F952B84008630EA /* TableViewController.swift */,
 				98FCE9551F44A0800048EEC4 /* KeyboardTouchHide.swift */,
 				98FED5F11F3B9E7100E11823 /* Main.storyboard */,
@@ -275,11 +278,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				982049EE1F9535FC008630EA /* CollectionViewController.swift in Sources */,
 				98FCE9581F44D5F40048EEC4 /* MemeStruct.swift in Sources */,
 				981ABE0F1F96A1AD0003E740 /* DetailMemedImageVC.swift in Sources */,
+				981246851FA4AF6000580833 /* CollectionViewCell.swift in Sources */,
 				98FED5F01F3B9E7100E11823 /* ViewController.swift in Sources */,
 				98FCE9561F44A0800048EEC4 /* KeyboardTouchHide.swift in Sources */,
+				984BE47D1FA269FA0019BC5E /* CollectionViewCollectionViewController.swift in Sources */,
 				982049EC1F952B84008630EA /* TableViewController.swift in Sources */,
 				98FED5EE1F3B9E7100E11823 /* AppDelegate.swift in Sources */,
 			);

@@ -42,7 +42,9 @@ class TableViewController: UITableViewController {
     func creatNewMeme() {
         if let navigationController = navigationController {
             let memeEditorViewContoller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController")
-            navigationController.pushViewController(memeEditorViewContoller!, animated: true)
+        navigationController.pushViewController(memeEditorViewContoller!, animated: true)
+            
+            //navigationController.present(memeEditorViewContoller!, animated: true, completion: nil)
             self.tabBarController?.tabBar.isHidden = true
         }
     }

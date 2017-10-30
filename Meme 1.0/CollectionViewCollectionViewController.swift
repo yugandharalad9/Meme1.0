@@ -1,8 +1,8 @@
 //
-//  CollectionViewController.swift
-//  Meme 1.0
+//  CollectionViewCollectionViewController.swift
+//  Meme 2.0
 //
-//  Created by Yugandhara Lad on 10/16/17.
+//  Created by Yugandhara Lad on 10/26/17.
 //  Copyright © 2017 Yugandhara Lad. All rights reserved.
 //
 
@@ -10,8 +10,16 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CollectionViewController: UICollectionViewController {
-
+class CollectionViewCollectionViewController: UICollectionViewController {
+   
+    
+    var sentMemes: [Meme]! {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        return appDelegate.memes
+        
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +32,11 @@ class CollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        collectionView?.reloadData()
+        print(sentMemes)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -49,13 +62,20 @@ class CollectionViewController: UICollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return sentMemes.count
     }
-
+    
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "memeCollectionViewCell", for: indexPath)
     
         // Configure the cell
+        
+        let memedImagesCollectionView = sentMemes[indexPath.row]
+        
+          
+        
+        
     
         return cell
     }

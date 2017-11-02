@@ -28,7 +28,7 @@ class CollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(CollectionViewCell.self, forCellWithReuseIdentifier: "CCell")
+        //self.collectionView!.register(CollectionViewCell.self, forCellWithReuseIdentifier: "CCell")
 
         // Do any additional setup after loading the view.
         

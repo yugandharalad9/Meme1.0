@@ -1,5 +1,5 @@
 //
-//  CollectionViewCollectionViewController.swift
+//  CollectionViewController.swift
 //  Meme 2.0
 //
 //  Created by Yugandhara Lad on 10/26/17.
@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "Cell"
 
-class CollectionViewCollectionViewController: UICollectionViewController {
+class CollectionViewController: UICollectionViewController {
    
     
     var sentMemes: [Meme]! {
@@ -30,8 +30,19 @@ class CollectionViewCollectionViewController: UICollectionViewController {
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "New Meme", style: .plain, target: self, action: #selector(creatNewMemeCVC))
     }
-
+//Navigationg to MemeEditorViewController from "NEW Meme" button
+    
+    func creatNewMemeCVC() {
+        if let navigationController = navigationController {
+            let memeEditorViewContoller = self.storyboard!.instantiateViewController(withIdentifier: "MemeEditorViewController")
+            navigationController.present(memeEditorViewContoller, animated: true, completion: nil)
+        }
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         collectionView?.reloadData()
@@ -74,6 +85,8 @@ class CollectionViewCollectionViewController: UICollectionViewController {
         let memedImagesCollectionView = sentMemes[indexPath.row]
         
         cell.imageViewCollectionViewCell.image = memedImagesCollectionView.memedImage
+        
+        cell.backgroundColor = UIColor.black
   
         return cell
     }

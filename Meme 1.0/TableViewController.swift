@@ -41,9 +41,9 @@ class TableViewController: UITableViewController {
     //navigating to View Controller to creat new meme
     func creatNewMeme() {
         if let navigationController = navigationController {
-            let memeEditorViewContoller = self.storyboard?.instantiateViewController(withIdentifier: "ViewController")
-        navigationController.pushViewController(memeEditorViewContoller!, animated: true)
-            //navigationController.present(memeEditorViewContoller!, animated: true, completion: nil)
+            let memeEditorViewContoller = self.storyboard?.instantiateViewController(withIdentifier: "MemeEditorViewController")
+        //navigationController.pushViewController(memeEditorViewContoller!, animated: true)
+            navigationController.present(memeEditorViewContoller!, animated: true, completion: nil)
             //navigationController.present(memeEditorViewContoller!, animated: true, completion: nil)
             self.tabBarController?.tabBar.isHidden = true
         }
@@ -59,7 +59,7 @@ class TableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -77,7 +77,11 @@ class TableViewController: UITableViewController {
         
         
         cell.imageView?.image = memeImages.memedImage
-        cell.textLabel?.text = memeImages.topText
+        let memeTopText = memeImages.topText
+        let memeBottomText = memeImages.bottomText
+        
+        
+        cell.textLabel?.text = "\(memeTopText)...\(memeBottomText)"
         
 
         return cell

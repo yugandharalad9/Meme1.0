@@ -8,13 +8,14 @@
 
 import UIKit
 
-private let reuseIdentifier = "CCell"
 
 class CollectionViewController: UICollectionViewController {
-   
+    @IBOutlet var myCollectionView: UICollectionView!
     
+    private let reuseIdentifier = "CCell"
+
     var sentMemes: [Meme]! {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         return appDelegate.memes
         
     }
@@ -45,7 +46,7 @@ class CollectionViewController: UICollectionViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        collectionView?.reloadData()
+        collectionView!.reloadData()
         print(sentMemes)
     }
     override func didReceiveMemoryWarning() {
@@ -82,10 +83,20 @@ class CollectionViewController: UICollectionViewController {
         
     
         // Configure the cell
-        
+    
         let memedImagesCollectionView = sentMemes[indexPath.row]
         
         cell.imageViewCollectionViewCell?.image = memedImagesCollectionView.memedImage
+        
+        print("Image = \(memedImagesCollectionView.memedImage)")
+        
+        print("Image in cell is \(cell.imageViewCollectionViewCell?.image)")
+        /*if cell.imageViewCollectionViewCell.image != nil {
+            print("Image")
+        } else {
+            print("no Image")
+        }*/
+        //cell.imageViewCollectionViewCell!.image = memedImagesCollectionView.memedImage
         
         cell.backgroundColor = UIColor.black
   

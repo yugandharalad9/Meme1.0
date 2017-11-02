@@ -160,6 +160,9 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Collection View" id="rl2-Ud-Tj5"/>
+                    <connections>
+                        <outlet property="myCollectionView" destination="0lc-rd-Zc3" id="6yS-Hk-wVE"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lX3-eu-uR1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

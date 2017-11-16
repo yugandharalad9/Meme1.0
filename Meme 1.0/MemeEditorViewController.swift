@@ -22,15 +22,8 @@ class MemeEditorViewController: UIViewController,   UIImagePickerControllerDeleg
     @IBOutlet var cancelButton: UIBarButtonItem!
     @IBOutlet var shareButton: UIBarButtonItem!
     
-    
-    
     //defining default text attributes
     let memeTextAttributes: [String: Any] = [NSStrokeColorAttributeName: UIColor.black, NSForegroundColorAttributeName: UIColor.white, NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 20) ?? 20, NSStrokeWidthAttributeName: 5]
-    
-    
-    
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,13 +57,6 @@ class MemeEditorViewController: UIViewController,   UIImagePickerControllerDeleg
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -112,15 +98,11 @@ class MemeEditorViewController: UIViewController,   UIImagePickerControllerDeleg
         
     }
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         btnCamera.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
-        //self.tabBarController!.tabBar.isHidden = true
-        //self.navigationController!.navigationBar.isHidden = false
         
     }
 

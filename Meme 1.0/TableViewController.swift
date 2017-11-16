@@ -97,6 +97,8 @@ class TableViewController: UITableViewController {
         
         //send information to VC with data from selected row
         detailedImageVC.detailMeme = memedImages[indexPath.row]
+        
+        present(detailedImageVC, animated: true, completion: nil)
     }
 
     /*
